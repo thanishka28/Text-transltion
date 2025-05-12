@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language Translation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body style="background:  #f8f8f8;">
+
+    <div class="navbar">
+        <div class="logo">Translator</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="translate.html">Translate</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Select Translation Mode</h2>
+        <button onclick="showTextTranslation()">Text Translation</button>
+        <button onclick="showImageUpload()">Image Translation</button>
+
+        <!-- Text Translation Section -->
+        <div id="text-translation" class="hidden">
+            <h2>Text Translation</h2>
+            <textarea id="input-text" placeholder="Enter English text here..."></textarea><br>
+
+            <h2><label>Select Target Language:</label></h2>
+            <select id="text-language">
+                <option value="hi">Hindi</option>
+                <option value="te">Telugu</option>
+                <option value="ta">Tamil</option>
+                <option value="bn">Bengali</option>
+                <option value="ur">Urdu</option>
+                <option value="pa">Punjabi</option>
+                <option value="mr">Marathi</option>
+                <option value="gu">Gujarati</option>
+            </select><br><br>
+
+            <button onclick="translateText()">Get Translation</button><br>
+            <textarea id="translated-text" placeholder="Translated text appears here..." readonly></textarea>
+        </div>
+
+        <!-- Image Upload Section -->
+        <div id="image-upload" class="hidden">
+            <h2>Image Translation</h2>
+            <input type="file" id="image-input" accept="image/*"><br><br>
+            <button onclick="extractTextFromImage()">Extract Text from Image</button><br><br>
+
+            <textarea id="extracted-text" placeholder="Extracted text appears here..." readonly></textarea><br>
+
+            <h2><label>Select Target Language:</label></h2>
+            <select id="image-language">
+                <option value="hi">Hindi</option>
+                <option value="te">Telugu</option>
+                <option value="ta">Tamil</option>
+                <option value="bn">Bengali</option>
+                <option value="ur">Urdu</option>
+                <option value="pa">Punjabi</option>
+                <option value="mr">Marathi</option>
+                <option value="gu">Gujarati</option>
+            </select><br><br>
+
+            <button onclick="translateExtractedText()">Get Translation</button><br>
+            <textarea id="image-text" placeholder="Translated text appears here..." readonly></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
